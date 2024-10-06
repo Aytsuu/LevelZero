@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Black Dog</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> 
+    <link href="https://fonts.cdnfonts.com/css/hangyaboly" rel="stylesheet">
+</head>
+<body>
+    <div class="intro">
+        <div class="container">
+            <img class="dog" src="images/introImg2.png"/>
+            <h1 class="title">The Black Dog</h1>
+            <p>By: Level Zero</p>
+            <img class="playBtn" src="images/playButton.png" >
+        </div>
+    </div>
+    <div class="main">
+        <canvas></canvas>
+    </div>
+</body>
+</html>
+<style>
+    * {
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        font-family: 'Hangyaboly', sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        position: relative; /* Make the body relative to position children absolutely */
+    }
+
+    .intro {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        z-index: 2; /* Higher z-index to stay on top */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .intro.fade{
+        opacity: 0;
+        animation: fade-out 0.5s linear
+    }
+
+    @keyframes fade-out{
+        0%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 0;
+        }
+    }
+
+    .intro .container{
+        width: 1600px;
+        height: 900px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container .dog{
+        max-width: 10rem;
+    }
+
+    .container h1{
+        font-size: 70px;
+    }
+
+    .container p{
+        font-size: 30px;
+    }
+
+    .container .playBtn{
+        margin-top: 3rem;
+        width: 15rem;
+        cursor: pointer;
+    }
+
+    .container .playBtn:hover{
+        transform: scale(110%);
+    }
+
+    .main {
+        position: absolute; /* Position it absolutely within the body */
+        top: 0; /* Align to the top */
+        left: 0; /* Align to the left */
+        width: 100vw;
+        height: 100vh;
+        background-color: black; /* Background color for the canvas */
+        z-index: 1; /* Lower z-index to place it behind the intro */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+</style>
+<script src="Sprite.js"></script>
+<script src="Elements.js"></script>
+<script src="Dialogue.js"></script>
+<script src="eventListener.js"></script>
+<script src="index.js"></script>
+<script src="newspaper.js"></script>
+<script src="flood.js"></script>
+<script src="Rain.js"></script> 
