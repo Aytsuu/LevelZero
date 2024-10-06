@@ -1,9 +1,10 @@
 let canPress = false
 let intro = document.querySelector(".intro")
-let play = document.querySelector(".playBtn")
+const play = document.querySelector(".playBtn")
 
 // Click play button to start
 play.addEventListener('click', () => {
+    play.classList.add("hide")
     intro.classList.add("fade")
     bgSound.currentTime = 0
     bgSound.play()
